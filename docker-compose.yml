@@ -1,0 +1,26 @@
+services:
+
+  postgres:
+    image: postgres:15.4-alpine3.18
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+  flyway: 
+    image: flyway/flyway:10-alpine
+    container_name: flyway
+    restart: always
+    entrypoint: /bin/bash
+    stdin_open: true 
+    tty: true
+    volumes:
+      - ./flyway/conf:/flyway/conf
+      - ./flyway/sql:/flyway/sql
+
+volumes:
+  pgdata:

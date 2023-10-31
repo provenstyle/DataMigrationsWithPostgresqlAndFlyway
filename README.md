@@ -1,4 +1,3 @@
-
 # Data Migrations with Postgresql and Flyway
 
 ## Workflow
@@ -9,9 +8,9 @@
 
 ## Flyway Database Migrations Commands
 
-        flyway info
-        flyway migrate
-        flyway clean
+    flyway info
+    flyway migrate
+    flyway clean
 
 ## Postgres
 Default Username: postgres
